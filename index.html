@@ -1,3 +1,4 @@
+<!--
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -638,5 +639,51 @@
         </div>
       </section>
     </main>
+  </body>
+</html>
+-->
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Math Legitness™</title>
+  </head>
+  <body>
+    <h1>Math Legitness™</h1>
+    <p>This is a very cool website that can calculate distance ™</p>
+    <p>PS THIS DOES NOT FIND THE SQUAREROOT, FIND IT YOURSELF ™</p>
+    <br />
+    <p>The distance between two points is: <span id="distance"></span></p>
+    <label>Enter coordinates (x1, y1, x2, y2):</label>
+    <input type="text" id="coords" placeholder="x1, y1, x2, y2" />
+    <button onclick="calculateDistance()">Calculate Distance</button>
+    <br /><br />
+    <img
+      src="https://i.imgur.com/bx5YaB6.jpeg"
+      alt="Cool Math Image"
+      width="300"
+    />
+    <img
+      src="https://i.imgur.com/bx5YaB6.jpeg"
+      alt="Too bad you can't see it"
+      width="300"
+    />
+    <img src="https://i.imgur.com/bx5YaB6.jpeg" alt="NOOB" width="300" />
+    <script>
+      function calculateDistance() {
+        var coords = document
+          .getElementById("coords")
+          .value.split(",")
+          .map(Number);
+        var distance = getDistance(...coords);
+        document.getElementById("distance").innerText = distance;
+      }
+
+      function getDistance(x1, y1, x2, y2) {
+        var calculate = Math.pow(x1 - x2, 2) + Math.pow(y1 - y2, 2);
+        return calculate;
+      }
+    </script>
   </body>
 </html>

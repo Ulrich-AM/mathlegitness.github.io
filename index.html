@@ -1,7 +1,3 @@
-<!-- what are you doing in the code you negro -->
-<!-- get out -->
-
-<!-- press ctrl+w  to see full code -->
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -29,6 +25,10 @@
       width="300"
     />
     <img src="https://i.imgur.com/bx5YaB6.jpeg" alt="NOOB" width="300" />
+
+    <!-- Solution area -->
+    <div id="solution" style="margin-top: 20px; font-family: monospace"></div>
+
     <script>
       function calculateDistance() {
         var coords = document
@@ -37,11 +37,35 @@
           .map(Number);
         var distance = getDistance(...coords);
         document.getElementById("distance").innerText = distance;
+
+        showSolution(...coords);
       }
 
       function getDistance(x1, y1, x2, y2) {
-        var calculate = 'Squareroot of ' + (Math.pow(x1 - x2, 2) + Math.pow(y1 - y2, 2)) + '™';
+        var calculate =
+          "Squareroot of " +
+          (Math.pow(x1 - x2, 2) + Math.pow(y1 - y2, 2)) +
+          "™";
         return calculate;
+      }
+
+      //this is not my function this is chatGPT sorry
+      function showSolution(x1, y1, x2, y2) {
+        let dx = x1 - x2;
+        let dy = y1 - y2;
+        let dx2 = Math.pow(dx, 2);
+        let dy2 = Math.pow(dy, 2);
+        let sum = dx2 + dy2;
+
+        let steps = `
+          <h3>Solution:</h3>
+          Z = √( (${x1} - ${x2})² + (${y1} - ${y2})² )<br>
+          Z = √( (${dx})² + (${dy})² )<br>
+          Z = √( ${dx2} + ${dy2} )<br>
+          Z = √( ${sum} )
+        `;
+
+        document.getElementById("solution").innerHTML = steps;
       }
     </script>
   </body>
